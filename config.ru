@@ -5,5 +5,5 @@ require 'bundler'
 
 Bundler.require(:default)
 
-require 'tracklist-converter'
+require './tracklist-converter'
 run TracklistConverter
