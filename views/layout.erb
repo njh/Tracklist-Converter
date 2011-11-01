@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+        "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Tracklist Converter<%= " - #{h(@title)}" unless @title.nil? %></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link type="text/css" rel="stylesheet" href="/css/stylesheet.css" />
+</head>
+<body>
+
+<div id="header">
+  <h1><%= "#{h(@title || 'Tracklist Converter')}" %></h1>
+</div>
+
+<%= yield %>
+
+<div id="footer">
+  <div class="links">
+    Powered by:
+    <a href="http://heroku.com/">heroku</a> and 
+    <a href="http://www.sinatrarb.com/">Sinatra</a>,
+  </div>
+  <div class="links">
+    Source code: <%= link_to('http://github.com/njh/tracklist-converter') %>
+  </div>
+</div>
+
+</body>
+</html>
