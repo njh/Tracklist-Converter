@@ -9,8 +9,8 @@ Formats
 
 Support for the following formats is planned:
 
-* Short Text
-* Long Text
+* Simple Text (artist - title)
+* Fielded Text (key: value)
 * [CUE]
 * [haudio]
 * [JSPF]
