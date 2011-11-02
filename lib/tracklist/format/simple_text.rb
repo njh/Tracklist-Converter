@@ -10,20 +10,24 @@ module Tracklist::Format::SimpleText
       
       next if line =~ /^#/
       
+      
+      # FIXME: add back support for other types of dash:
+      # http://en.wikipedia.org/wiki/Dash
+      
       if line.empty? or line == '=END='
         current_feature = nil
         next
       elsif line =~ /^=(.*)=$/
         current_feature = $1
         next
-      elsif line =~ /^(\d{1,2}[:.]\d{1,2}[:.]?(\d{1,2})?\s+)?(.*) [–-] (.*) ?\((.*?)\)$/
+      elsif line =~ /^(\d{1,2}[:.]\d{1,2}[:.]?(\d{1,2})?\s+)?(.*) - (.*) ?\((.*?)\)$/
         tracks << Track.new(
           :start_time => $1,
           :performer => $3,
           :track_title => $4.strip,
           :record_label => $5
         )
-      elsif line =~ /^(\d{1,2}[:.]\d{1,2}[:.]?(\d{1,2})?\s+)?(.*) [–-] (.*)$/
+      elsif line =~ /^(\d{1,2}[:.]\d{1,2}[:.]?(\d{1,2})?\s+)?(.*) - (.*)$/
         tracks << Track.new(
           :start_time => $1,
           :performer => $3,
