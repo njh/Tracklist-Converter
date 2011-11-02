@@ -1,5 +1,8 @@
 #!/usr/bin/ruby
 
+require 'track'
+require 'tracklist'
+
 class TracklistConverter < Sinatra::Base
   set :public_folder, File.dirname(__FILE__) + '/public'
 
@@ -23,6 +26,12 @@ class TracklistConverter < Sinatra::Base
   get '/' do
     headers 'Cache-Control' => 'public,max-age=3600'
     erb :index
+  end
+
+  post '/process' do
+    @tracks = Tracklist::Format::SimpleText.parse( params['text'] )
+    @output = Tracklist::Format::FieldedText.export( @tracks )
+    erb :output
   end
 
 end
