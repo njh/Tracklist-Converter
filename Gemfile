@@ -1,4 +1,7 @@
 source "http://rubygems.org"
+ruby "2.1.2"
+
+gem 'thin'
 
 gem 'sinatra'
 gem 'doodle'
@@ -9,7 +12,7 @@ group :development do
 end
 
 group :test do
-#  gem 'rspec', '> 2.0.0', :require => 'spec'
+  gem 'rspec', '>=2.7.0'
   gem 'mocha'
-  gem 'rcov'
+  gem 'simplecov'
 end
