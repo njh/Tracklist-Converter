@@ -18,6 +18,22 @@ Support for the following formats is planned:
 * [XSPF]
 
 
+License
+-------
+
+This Tacklist Converter is licensed under the terms of the MIT license.
+See the file LICENSE for details.
+
+
+Contact
+-------
+
+* Author:    Nicholas J Humfrey
+* Email:     njh@aelius.com
+* Twitter:   [@njh](http://twitter.com/njh)
+* Home Page: http://www.aelius.com/njh/
+
+
 
 [CUE]: http://en.wikipedia.org/wiki/Cue_sheet_(computing)
 [haudio]: http://microformats.org/wiki/haudio
